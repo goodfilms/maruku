@@ -19,9 +19,6 @@
 #++
 
 
-require 'iconv'
-
-
 module MaRuKu; module In; module Markdown; module BlockLevelParser
 		
 	def parse_doc(s)
@@ -40,14 +37,14 @@ Summary:   Encoding for the document.
 If the `encoding` attribute is specified, then the content
 will be converted from the specified encoding to UTF-8.
 
-Conversion happens using the `iconv` library.
+Eliminated iconv for encoding 5/17/2012 DPF
 =end
 
 		enc = self.attributes[:encoding]
 		self.attributes.delete :encoding
 		if enc && enc.downcase != 'utf-8'
-			converted = Iconv.new('utf-8', enc).iconv(data)
-			
+			converted = data.encode('utf-8', enc)
+
 #			puts "Data: #{data.inspect}: #{data}"
 #			puts "Conv: #{converted.inspect}: #{converted}"
 			
