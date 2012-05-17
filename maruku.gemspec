@@ -1,7 +1,10 @@
 
-require 'lib/maruku/version'
+# -*- encoding: utf-8 -*-
+# require 'lib/maruku/version.rb'
+require File.expand_path("../../maruku/lib/maruku/version.rb", __FILE__)
 
-$spec = Gem::Specification.new do |s|
+
+Gem::Specification.new do |s|
   s.name = 'maruku'
   s.version = MaRuKu::Version
   s.summary = "Maruku is a Markdown-superset interpreter written in Ruby."
@@ -12,7 +15,7 @@ $spec = Gem::Specification.new do |s|
   s.files = Dir['lib/**/*.rb'] + Dir['lib/*.rb'] + 
 	Dir['docs/*.md'] +	Dir['docs/*.html'] +
 	Dir['spec/**/*.rb'] + Dir['spec/**/*.md'] +
-          Dir['bin/*'] + ['Rakefile', 'maruku_gem.rb']
+          Dir['bin/*'] + ['Rakefile']
 
   s.bindir = 'bin'
   s.executables = ['maruku','marutex']
