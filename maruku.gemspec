@@ -1,8 +1,8 @@
-
 # -*- encoding: utf-8 -*-
-# require 'lib/maruku/version.rb'
-require File.expand_path("../../maruku/lib/maruku/version.rb", __FILE__)
-
+lib = File.expand_path('../lib/', __FILE__)
+$:.unshift lib unless $:.include?(lib)
+ 
+require 'maruku/version'
 
 Gem::Specification.new do |s|
   s.name = 'maruku'
